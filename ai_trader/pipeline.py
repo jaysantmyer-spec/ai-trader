@@ -16,6 +16,11 @@ from .trading import PaperEngine, decide, rr_after_costs, load_setups, save_setu
 STATE = "data/state.json"
 
 
+def _utc(x) -> pd.Timestamp:
+    t = pd.Timestamp(x)
+    return t.tz_localize("UTC") if t.tzinfo is None else t.tz_convert("UTC")
+
+
 def log(msg: str):
     print(f"[{pd.Timestamp.utcnow().strftime('%H:%M:%S')}] {msg}", flush=True)
 
@@ -114,7 +119,7 @@ def run(mode_name: str = C.DEFAULT_MODE, retrain_hours: int = 24):
         for i, s in unresolved.iterrows():
             f = feats.get(s["symbol"])
             if f is None: continue
-            row = f[f["time"] == pd.Timestamp(s["time"], tz="UTC")]
+            row = f[f["time"] == _utc(s["time"])]
             if row.empty or not np.isfinite(row["y"].iloc[0]): continue
             setups.loc[i, ["resolved", "y", "y_r"]] = [True, float(row["y"].iloc[0]), float(row["y_r"].iloc[0])]
 
@@ -157,7 +162,7 @@ def run(mode_name: str = C.DEFAULT_MODE, retrain_hours: int = 24):
             for _, s in res.iterrows():
                 f = feats.get(s["symbol"]);
                 if f is None: continue
-                row = f[f["time"] == pd.Timestamp(s["time"], tz="UTC")]
+                row = f[f["time"] == _utc(s["time"])]
                 if row.empty or row[cols].isna().any(axis=1).iloc[0]: continue
                 Xr.append(row[cols].values[0].astype(float)); yr.append(float(s["y"]))
             if len(yr) >= C.CHALLENGER_MIN_RESOLVED:
