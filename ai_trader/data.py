@@ -25,6 +25,22 @@ def load_bars(sym: str) -> pd.DataFrame:
     return df.sort_values("time").drop_duplicates("time").reset_index(drop=True)
 
 
+def resample(df: pd.DataFrame, minutes: int) -> pd.DataFrame:
+    """Aggregate hourly bars into larger bars (e.g. 4h) for markets whose hourly moves can't pay the fees."""
+    if df.empty or minutes <= 60:
+        return df
+    g = df.set_index("time").resample(f"{minutes}min", label="left", closed="left")
+    out = pd.DataFrame({"open": g["open"].first(), "high": g["high"].max(), "low": g["low"].min(),
+                        "close": g["close"].last(), "volume": g["volume"].sum()}).dropna(subset=["open"]).reset_index()
+    return out[COLS]
+
+
+def load_model_bars(sym: str) -> pd.DataFrame:
+    """Bars at the timeframe the model trades for this symbol."""
+    df = load_bars(sym)
+    return resample(df, C.CRYPTO_BAR_MINUTES) if market_of(sym) == "crypto" else df
+
+
 def save_bars(sym: str, df: pd.DataFrame) -> None:
     df = df.sort_values("time").drop_duplicates("time").reset_index(drop=True)
     df.to_csv(_path(sym), index=False)
@@ -83,6 +99,12 @@ def refresh_all(log=print) -> dict:
     for pair, sym in C.CRYPTO.items():
         try:
             old = load_bars(sym)
+            if len(old) < 2000:
+                # Kraken only serves the last 720 candles; backfill two years from Yahoo, then Kraken keeps the edge fresh
+                try:
+                    old = merge(old, fetch_yahoo(sym, period="729d", interval=C.INTERVAL))
+                except Exception as e:
+                    log(f"{sym} yahoo backfill: {e}")
             since = int(old["time"].iloc[-1].timestamp()) if not old.empty else None
             new = fetch_kraken(pair, since)
             df = merge(old, new)

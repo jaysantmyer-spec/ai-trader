@@ -35,7 +35,7 @@ def save_state(s: dict):
 def dataset(min_bars: int = C.MIN_HISTORY_BARS) -> tuple[pd.DataFrame, dict[str, pd.DataFrame]]:
     rows, feats = [], {}
     for sym in D.all_symbols():
-        df = D.load_bars(sym)
+        df = D.load_model_bars(sym)
         if len(df) < min_bars:
             continue
         f = build_features(df)

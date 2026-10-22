@@ -14,13 +14,14 @@ CRYPTO = {            # Kraken pair -> display symbol
 STOCKS = ["SPY", "QQQ", "AAPL", "NVDA", "TSLA", "AMZN", "MSFT", "META", "AMD", "IWM"]
 INTERVAL = "1h"
 BAR_MINUTES = 60
+CRYPTO_BAR_MINUTES = 240   # crypto is modelled on 4h bars: hourly moves on Kraken do not cover the 0.6% round-trip fee
 
 # ---- setup definition (triple barrier) -------------------------------------------------------------
 HORIZON_BARS = 24          # a setup resolves within 24 hourly bars (one day) if neither barrier is hit
 TARGET_ATR = 1.5           # default target = entry + 1.5 * ATR(14)
 STOP_ATR = 1.0             # default stop   = entry - 1.0 * ATR(14)   -> reward:risk 1.5 before costs
 # per-market barriers: crypto pays ~0.6% round trip on Kraken, so its barriers must be wider or fees eat the edge
-BARRIERS = {"crypto": (2.5, 1.5), "stock": (1.5, 1.0)}   # (target_atr, stop_atr)
+BARRIERS = {"crypto": (2.0, 1.2), "stock": (1.5, 1.0)}   # (target_atr, stop_atr)
 def barriers(market: str) -> tuple[float, float]:
     return BARRIERS.get(market, (TARGET_ATR, STOP_ATR))
 MIN_HISTORY_BARS = 400     # bars needed before a symbol can produce a setup
