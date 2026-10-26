@@ -439,6 +439,13 @@
    "champion_brier": 0.1763038132266225,
    "challenger_brier": 0.17388378355892412,
    "why": "champion kept"
+  },
+  {
+   "at": "2026-10-26T04:38:04.381938+00:00",
+   "n": 142,
+   "champion_brier": 0.17468059759453014,
+   "challenger_brier": 0.17234294668808098,
+   "why": "champion kept"
   }
  ]
 }
