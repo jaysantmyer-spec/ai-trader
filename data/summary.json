@@ -1,13 +1,13 @@
 {
- "ts": "2026-10-25T23:28:23.907016+00:00",
+ "ts": "2026-10-26T00:56:29.646493+00:00",
  "mode": "swing",
  "symbols": 15,
  "equity": 10000.0,
  "open_trades": 0,
  "setups_total": 240,
- "setups_resolved": 121,
- "setup_brier": 0.18329143737069598,
- "setup_base_brier": 0.09589508913325591,
+ "setups_resolved": 125,
+ "setup_brier": 0.182253731296301,
+ "setup_base_brier": 0.09318400000000003,
  "buy_signals_resolved": 0,
  "buy_win_rate": null,
  "scorecard": {
@@ -136,31 +136,31 @@
    "ok": true,
    "bars": 17520,
    "new": 2,
-   "last": "2026-10-25 22:00:00+00:00"
+   "last": "2026-10-25 23:00:00+00:00"
   },
   "ETH-USD": {
    "ok": true,
    "bars": 17520,
    "new": 2,
-   "last": "2026-10-25 22:00:00+00:00"
+   "last": "2026-10-25 23:00:00+00:00"
   },
   "SOL-USD": {
    "ok": true,
    "bars": 17520,
    "new": 2,
-   "last": "2026-10-25 22:00:00+00:00"
+   "last": "2026-10-25 23:00:00+00:00"
   },
   "XRP-USD": {
    "ok": true,
    "bars": 17520,
    "new": 2,
-   "last": "2026-10-25 22:00:00+00:00"
+   "last": "2026-10-25 23:00:00+00:00"
   },
   "DOGE-USD": {
    "ok": true,
    "bars": 17520,
    "new": 2,
-   "last": "2026-10-25 22:00:00+00:00"
+   "last": "2026-10-25 23:00:00+00:00"
   },
   "SPY": {
    "ok": true,
@@ -635,6 +635,13 @@
     "n": 121,
     "champion_brier": 0.17930875428146514,
     "challenger_brier": 0.17680497426437397,
+    "why": "champion kept"
+   },
+   {
+    "at": "2026-10-26T00:56:29.646493+00:00",
+    "n": 125,
+    "champion_brier": 0.17838085099268122,
+    "challenger_brier": 0.17589051756536514,
     "why": "champion kept"
    }
   ]
