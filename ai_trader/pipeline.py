@@ -155,7 +155,8 @@ def run(mode_name: str = C.DEFAULT_MODE, retrain_hours: int = 24):
 
     # ---- 7. champion vs challenger on recently resolved setups -------------------------------------------
     chal = Brain.load("challenger")
-    if chal is not None and champ is not None and chal.meta.get("trained_at") != champ.meta.get("trained_at"):
+    if chal is not None and champ is not None and chal.meta.get("trained_at") != champ.meta.get("trained_at") \
+            and state.get("judged_challenger") != chal.meta.get("trained_at"):
         res = setups[setups["resolved"] == True].tail(400)
         if len(res) >= C.CHALLENGER_MIN_RESOLVED:
             Xr = []; yr = []
@@ -177,6 +178,7 @@ def run(mode_name: str = C.DEFAULT_MODE, retrain_hours: int = 24):
                     verdict["why"] = "champion kept"
                     log(f"champion kept ({b_ch:.4f} vs challenger {b_cl:.4f})")
                 state["promotions"].append(verdict)
+                state["judged_challenger"] = chal.meta.get("trained_at")   # judge each challenger once
         else:
             log(f"challenger waiting: {len(res)} resolved setups of {C.CHALLENGER_MIN_RESOLVED}")
 
