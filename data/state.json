@@ -1,5 +1,5 @@
 {
- "last_train": "2026-10-30T00:53:19.249630+00:00",
+ "last_train": "2026-10-31T05:27:59.608192+00:00",
  "champion_since": "2026-10-23T14:41:55.987005+00:00",
  "promotions": [
   {
@@ -75,7 +75,14 @@
    "champion_brier": 0.2556761075810442,
    "challenger_brier": 0.2529264501133951,
    "why": "champion kept"
+  },
+  {
+   "at": "2026-10-31T05:27:59.608192+00:00",
+   "n": 400,
+   "champion_brier": 0.2503562868246916,
+   "challenger_brier": 0.24832490528121595,
+   "why": "champion kept"
   }
  ],
- "judged_challenger": "2026-10-30T00:54:54.641703+00:00"
+ "judged_challenger": "2026-10-31T05:30:50.660950+00:00"
 }
