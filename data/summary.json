@@ -1,13 +1,13 @@
 {
- "ts": "2026-11-01T19:35:24.225014+00:00",
+ "ts": "2026-11-01T23:32:25.130636+00:00",
  "mode": "swing",
  "symbols": 15,
  "equity": 10000.0,
  "open_trades": 0,
- "setups_total": 600,
- "setups_resolved": 515,
- "setup_brier": 0.2427904327400698,
- "setup_base_brier": 0.24184748798190217,
+ "setups_total": 605,
+ "setups_resolved": 522,
+ "setup_brier": 0.24153834499357874,
+ "setup_base_brier": 0.24082514936656824,
  "buy_signals_resolved": 0,
  "buy_win_rate": null,
  "scorecard": {
@@ -136,31 +136,31 @@
    "ok": true,
    "bars": 17520,
    "new": 5,
-   "last": "2026-11-01 18:00:00+00:00"
+   "last": "2026-11-01 22:00:00+00:00"
   },
   "ETH-USD": {
    "ok": true,
    "bars": 17520,
    "new": 5,
-   "last": "2026-11-01 18:00:00+00:00"
+   "last": "2026-11-01 22:00:00+00:00"
   },
   "SOL-USD": {
    "ok": true,
    "bars": 17520,
    "new": 5,
-   "last": "2026-11-01 18:00:00+00:00"
+   "last": "2026-11-01 22:00:00+00:00"
   },
   "XRP-USD": {
    "ok": true,
    "bars": 17520,
    "new": 5,
-   "last": "2026-11-01 18:00:00+00:00"
+   "last": "2026-11-01 22:00:00+00:00"
   },
   "DOGE-USD": {
    "ok": true,
    "bars": 17520,
    "new": 5,
-   "last": "2026-11-01 18:00:00+00:00"
+   "last": "2026-11-01 22:00:00+00:00"
   },
   "SPY": {
    "ok": true,
