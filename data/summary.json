@@ -1,13 +1,13 @@
 {
- "ts": "2026-11-13T22:33:16.203518+00:00",
+ "ts": "2026-11-14T03:07:25.339216+00:00",
  "mode": "swing",
  "symbols": 15,
  "equity": 10000.0,
  "open_trades": 0,
- "setups_total": 1015,
- "setups_resolved": 978,
- "setup_brier": 0.23084849016254147,
- "setup_base_brier": 0.2292144980992887,
+ "setups_total": 1020,
+ "setups_resolved": 988,
+ "setup_brier": 0.23011471847959294,
+ "setup_base_brier": 0.2281630579094887,
  "buy_signals_resolved": 0,
  "buy_win_rate": null,
  "scorecard": {
@@ -135,32 +135,32 @@
   "BTC-USD": {
    "ok": true,
    "bars": 17520,
-   "new": 7,
-   "last": "2026-11-13 21:00:00+00:00"
+   "new": 6,
+   "last": "2026-11-14 02:00:00+00:00"
   },
   "ETH-USD": {
    "ok": true,
    "bars": 17520,
-   "new": 7,
-   "last": "2026-11-13 21:00:00+00:00"
+   "new": 6,
+   "last": "2026-11-14 02:00:00+00:00"
   },
   "SOL-USD": {
    "ok": true,
    "bars": 17520,
-   "new": 7,
-   "last": "2026-11-13 21:00:00+00:00"
+   "new": 6,
+   "last": "2026-11-14 02:00:00+00:00"
   },
   "XRP-USD": {
    "ok": true,
    "bars": 17520,
-   "new": 7,
-   "last": "2026-11-13 21:00:00+00:00"
+   "new": 6,
+   "last": "2026-11-14 02:00:00+00:00"
   },
   "DOGE-USD": {
    "ok": true,
    "bars": 17520,
-   "new": 7,
-   "last": "2026-11-13 21:00:00+00:00"
+   "new": 6,
+   "last": "2026-11-14 02:00:00+00:00"
   },
   "SPY": {
    "ok": true,
@@ -224,7 +224,7 @@
   }
  },
  "state": {
-  "last_train": "2026-11-13T00:13:42.176573+00:00",
+  "last_train": "2026-11-14T03:07:25.339216+00:00",
   "champion_since": "2026-10-23T14:41:55.987005+00:00",
   "promotions": [
    {
@@ -384,8 +384,15 @@
     "champion_brier": 0.2137184491633509,
     "challenger_brier": 0.2110830683601548,
     "why": "champion kept"
+   },
+   {
+    "at": "2026-11-14T03:07:25.339216+00:00",
+    "n": 400,
+    "champion_brier": 0.21137437876725937,
+    "challenger_brier": 0.20891578151540574,
+    "why": "champion kept"
    }
   ],
-  "judged_challenger": "2026-11-13T00:15:45.230847+00:00"
+  "judged_challenger": "2026-11-14T03:09:00.936883+00:00"
  }
 }
