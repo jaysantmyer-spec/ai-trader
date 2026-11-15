@@ -1,13 +1,13 @@
 {
- "ts": "2026-11-15T01:49:51.191432+00:00",
+ "ts": "2026-11-15T09:15:15.813924+00:00",
  "mode": "swing",
  "symbols": 15,
  "equity": 10000.0,
  "open_trades": 0,
- "setups_total": 1040,
- "setups_resolved": 1008,
- "setup_brier": 0.22868917910808548,
- "setup_base_brier": 0.22604875283446715,
+ "setups_total": 1045,
+ "setups_resolved": 1011,
+ "setup_brier": 0.22867454656578035,
+ "setup_base_brier": 0.22603781744040088,
  "buy_signals_resolved": 0,
  "buy_win_rate": null,
  "scorecard": {
@@ -135,32 +135,32 @@
   "BTC-USD": {
    "ok": true,
    "bars": 17520,
-   "new": 5,
-   "last": "2026-11-15 00:00:00+00:00"
+   "new": 9,
+   "last": "2026-11-15 08:00:00+00:00"
   },
   "ETH-USD": {
    "ok": true,
    "bars": 17520,
-   "new": 5,
-   "last": "2026-11-15 00:00:00+00:00"
+   "new": 9,
+   "last": "2026-11-15 08:00:00+00:00"
   },
   "SOL-USD": {
    "ok": true,
    "bars": 17520,
-   "new": 5,
-   "last": "2026-11-15 00:00:00+00:00"
+   "new": 9,
+   "last": "2026-11-15 08:00:00+00:00"
   },
   "XRP-USD": {
    "ok": true,
    "bars": 17520,
-   "new": 5,
-   "last": "2026-11-15 00:00:00+00:00"
+   "new": 9,
+   "last": "2026-11-15 08:00:00+00:00"
   },
   "DOGE-USD": {
    "ok": true,
    "bars": 17520,
-   "new": 5,
-   "last": "2026-11-15 00:00:00+00:00"
+   "new": 9,
+   "last": "2026-11-15 08:00:00+00:00"
   },
   "SPY": {
    "ok": true,
@@ -224,7 +224,7 @@
   }
  },
  "state": {
-  "last_train": "2026-11-14T03:07:25.339216+00:00",
+  "last_train": "2026-11-15T09:15:15.813924+00:00",
   "champion_since": "2026-10-23T14:41:55.987005+00:00",
   "promotions": [
    {
@@ -391,8 +391,15 @@
     "champion_brier": 0.21137437876725937,
     "challenger_brier": 0.20891578151540574,
     "why": "champion kept"
+   },
+   {
+    "at": "2026-11-15T09:15:15.813924+00:00",
+    "n": 400,
+    "champion_brier": 0.20871387612124223,
+    "challenger_brier": 0.2062449592775993,
+    "why": "champion kept"
    }
   ],
-  "judged_challenger": "2026-11-14T03:09:00.936883+00:00"
+  "judged_challenger": "2026-11-15T09:18:17.646420+00:00"
  }
 }
